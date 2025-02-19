@@ -1,280 +1,98 @@
-<a name="readme-top"></a>
-
-<!--
-HOW TO USE:
-This is an example of how you may give instructions on setting up your project locally.
+# Early Detection of Parkinson's Disease Using Voice Data 
 
-Modify this file to match your project and remove sections that don't apply.
+📌 **Project Overview**
 
-REQUIRED SECTIONS:
-- Table of Contents
-- About the Project
-  - Built With
-  - Live Demo
-- Getting Started
-- Authors
-- Future Features
-- Contributing
-- Show your support
-- Acknowledgements
-- License
+This project involves the analysis of the UCI Parkinson's Dataset, focusing on classification and regression tasks using machine learning techniques. The dataset consists of two main files:
 
-After you're finished please remove all the comments and instructions!
--->
+parkinsons.data – Used for classification to distinguish individuals with and without Parkinson’s disease.
 
-<div align="center">
+parkinsons_updrs.data – Used for regression to predict Unified Parkinson’s Disease Rating Scale (UPDRS) scores, which assess disease severity based on biomedical voice measurements.
 
-  <img src="murple_logo.png" alt="logo" width="140"  height="auto" />
-  <br/>
+The goal of this project is to enhance early diagnosis and severity assessment of Parkinson’s disease using machine learning models.
 
-  <h3><b>Microverse README Template</b></h3>
+📂 **Dataset Information**
 
-</div>
+The dataset is obtained from the UCI Machine Learning Repository and contains biomedical voice measurements from individuals with and without Parkinson’s disease. The Telemonitoring Parkinson’s Disease Dataset (found in the Telemonitoring folder) extends the original dataset by including additional biomedical voice measurements and UPDRS scores.
 
-<!-- TABLE OF CONTENTS -->
+Machine Learning Approaches
 
-# 📗 Table of Contents
+Classification (parkinsons.data)
 
-- [📖 About the Project](#about-project)
-  - [🛠 Built With](#built-with)
-    - [Tech Stack](#tech-stack)
-    - [Key Features](#key-features)
-  - [🚀 Live Demo](#live-demo)
-- [💻 Getting Started](#getting-started)
-  - [Setup](#setup)
-  - [Prerequisites](#prerequisites)
-  - [Install](#install)
-  - [Usage](#usage)
-  - [Run tests](#run-tests)
-  - [Deployment](#triangular_flag_on_post-deployment)
-- [👥 Authors](#authors)
-- [🔭 Future Features](#future-features)
-- [🤝 Contributing](#contributing)
-- [⭐️ Show your support](#support)
-- [🙏 Acknowledgements](#acknowledgements)
-- [❓ FAQ](#faq)
-- [📝 License](#license)
+The following models were used to classify individuals as having Parkinson’s disease or not:
 
-<!-- PROJECT DESCRIPTION -->
+Random Forest Classifier
 
-# 📖 [your_project_name] <a name="about-project"></a>
+Support Vector Classifier (SVC)
 
-> Describe your project in 1 or 2 sentences.
+XGBoost Classifier
 
-**[your_project__name]** is a...
+Regression (parkinsons_updrs.data)
 
-## 🛠 Built With <a name="built-with"></a>
+The following models were applied to predict UPDRS scores:
 
-### Tech Stack <a name="tech-stack"></a>
+Linear Regression
 
-> Describe the tech stack and include only the relevant sections that apply to your project.
+Random Forest Regressor
 
-<details>
-  <summary>Client</summary>
-  <ul>
-    <li><a href="https://reactjs.org/">React.js</a></li>
-  </ul>
-</details>
+Support Vector Regressor (SVR)
 
-<details>
-  <summary>Server</summary>
-  <ul>
-    <li><a href="https://expressjs.com/">Express.js</a></li>
-  </ul>
-</details>
+📂 **Implementation Steps**
 
-<details>
-<summary>Database</summary>
-  <ul>
-    <li><a href="https://www.postgresql.org/">PostgreSQL</a></li>
-  </ul>
-</details>
+1️⃣ Data Preprocessing:
 
-<!-- Features -->
+Handled missing values (if any) and checked for data inconsistencies.
 
-### Key Features <a name="key-features"></a>
+2️⃣ Feature Engineering:
 
-> Describe between 1-3 key features of the application.
+Standardized numerical features using MinMaxScaler and StandardScaler.
 
-- **[key_feature_1]**
-- **[key_feature_2]**
-- **[key_feature_3]**
+3️⃣ Feature Selection:
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+Identified the most important features using model-based feature selection.
 
-<!-- LIVE DEMO -->
+4️⃣ Model Training & Evaluation:
 
-## 🚀 Live Demo <a name="live-demo"></a>
+Split data into training and test sets (80% training, 20% testing).
 
-> Add a link to your deployed project.
+Applied machine learning models for classification and regression.
 
-- [Live Demo Link](https://yourdeployedapplicationlink.com)
+Evaluated models using appropriate metrics:
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+Classification: Accuracy, Precision, Recall, F1-score
 
-<!-- GETTING STARTED -->
+Regression: Mean Squared Error (MSE), Mean Absolute Error (MAE), and R² Score
 
-## 💻 Getting Started <a name="getting-started"></a>
+📂 **Installation & Usage**
 
-> Describe how a new developer could make use of your project.
+Requirements
 
-To get a local copy up and running, follow these steps.
+Ensure you have Python installed along with the following dependencies:
 
-### Prerequisites
+pip install numpy pandas scikit-learn xgboost matplotlib seaborn
 
-In order to run this project you need:
+Run the Project
 
-<!--
-Example command:
+Clone the repository and navigate to the project directory:
 
-```sh
- gem install rails
-```
- -->
+git clone git@github.com:dlwub/Early-Detection-of-Parkinson-s-Diseases-Using-Voice-Data.git
 
-### Setup
+📂 **Results**
 
-Clone this repository to your desired folder:
+The Random Forest Classifier and XGBoost Classifier achieved high accuracy in distinguishing Parkinson’s patients from healthy individuals.
 
-<!--
-Example commands:
+The Random Forest Regressor Regressor outperformed other models in predicting UPDRS scores.
 
-```sh
-  cd my-folder
-  git clone git@github.com:myaccount/my-project.git
-```
---->
+🔥 **Future Improvements**
 
-### Install
+Implement deep learning models for improved performance.
 
-Install this project with:
+Use hyperparameter tuning (GridSearchCV, RandomizedSearchCV) on the regression models for further optimization.
 
-<!--
-Example command:
+Integrate additional patient data for better generalization.
 
-```sh
-  cd my-project
-  gem install
-```
---->
+👨‍💻 **Author**
 
-### Usage
-
-To run the project, execute the following command:
-
-<!--
-Example command:
-
-```sh
-  rails server
-```
---->
-
-### Run tests
-
-To run tests, run the following command:
-
-<!--
-Example command:
-
-```sh
-  bin/rails test test/models/article_test.rb
-```
---->
-
-### Deployment
-
-You can deploy this project using:
-
-<!--
-Example:
-
-```sh
-
-```
- -->
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- AUTHORS -->
-
-## 👥 Authors <a name="authors"></a>
-
-> Mention all of the collaborators of this project.
-
-👤 **Author1**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-👤 **Author2**
-
-- GitHub: [@githubhandle](https://github.com/githubhandle)
-- Twitter: [@twitterhandle](https://twitter.com/twitterhandle)
-- LinkedIn: [LinkedIn](https://linkedin.com/in/linkedinhandle)
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FUTURE FEATURES -->
-
-## 🔭 Future Features <a name="future-features"></a>
-
-> Describe 1 - 3 features you will add to the project.
-
-- [ ] **[new_feature_1]**
-- [ ] **[new_feature_2]**
-- [ ] **[new_feature_3]**
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- CONTRIBUTING -->
-
-## 🤝 Contributing <a name="contributing"></a>
-
-Contributions, issues, and feature requests are welcome!
-
-Feel free to check the [issues page](../../issues/).
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- SUPPORT -->
-
-## ⭐️ Show your support <a name="support"></a>
-
-> Write a message to encourage readers to support your project
-
-If you like this project...
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- ACKNOWLEDGEMENTS -->
-
-## 🙏 Acknowledgments <a name="acknowledgements"></a>
-
-> Give credit to everyone who inspired your codebase.
-
-I would like to thank...
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- FAQ (optional) -->
-
-## ❓ FAQ <a name="faq"></a>
-
-> Add at least 2 questions new developers would ask when they decide to use your project.
-
-- **[Question_1]**
-
-  - [Answer_1]
-
-- **[Question_2]**
-
-  - [Answer_2]
-
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-<!-- LICENSE -->
+Desta Legesse Wubishet
 
 ## 📝 License <a name="license"></a>
 
